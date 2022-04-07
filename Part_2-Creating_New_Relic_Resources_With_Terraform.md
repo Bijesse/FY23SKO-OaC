@@ -97,7 +97,7 @@ You need to tidy this example up and configure it to your own needs. You can ref
 7. **Add** an attribute `aggregation_timer` with a value of `60`
 8. Delete `aggregation_delay`, `expiration_duration`, `open_violation_on_expiration` and `close_violations_on_expiration`. These settings control signal loss which you want to disable for this example.
 9. `slide_by`: Set this to zero.
-10. `nrql > query`: This is an NRQL condition so you need to specify the NRQL here, set the value to: `select count(*) from tfdemo` (This "tfdemo" event type doesnt exist yet, we'll deal with that later.)
+10. `nrql > query`: This is an NRQL condition so you need to specify the NRQL here, set the value to: `"select count(*) from tfdemo"` (This "tfdemo" event type doesnt exist yet, we'll deal with that later.)
 11. In the `critical` block make the following changes:
     - set the `threshold` to `0` and
     - set the `threshold_duration` to `120`
@@ -159,7 +159,7 @@ resource "newrelic_alert_channel" "foo" {
 As with the previous task you'll use this example code as a basis for your own and make changes accordingly. Update as follows:
 
 1. Change the resource name from "foo" to "sko_slack" (note the underscore here!)
-2. `name`: Set this to the value "**YOUR_USERNAME** SKO Slack Channel" - this is the name that will appear in the New Relic One
+2. `name`: Set this to the value "**YOUR_USERNAME** SKO Slack Channel" - this is the name that will appear in New Relic One
 3. `config.url`: Set this to the URL of the Slack webhook found in the [session credentials document](https://bit.ly/oac-sko-fy23).
 4. `config.channel`: Set this to `fy23sko-oac-session`
 
